@@ -66,7 +66,7 @@ class Fragmentlist : AppCompatActivity() {
             item.add(title)
             item.add(textPosition)
 
-            Intent(MyApplication.ApplicationContext(), ResearchOneFragment::class.java).apply {
+            Intent(MyApplication.ApplicationContext(), FragmentDetail::class.java).apply {
                 putExtra("data", item)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }.run {

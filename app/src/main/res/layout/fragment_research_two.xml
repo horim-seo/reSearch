@@ -5,10 +5,19 @@
     android:layout_height="match_parent"
     tools:context=".fragmentlist.ResearchTwoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- fragment_screen_slide_page.xml -->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/contentTwo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragment detail two" />
+        android:layout_height="match_parent" >
+
+        <TextView style="?android:textAppearanceMedium"
+            android:id="@+id/fragTextTwo"
+            android:padding="16dp"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ScrollView Two" />
+    </ScrollView>
 
 </FrameLayout>

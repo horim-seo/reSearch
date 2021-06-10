@@ -21,6 +21,8 @@
         </activity>
 
         <activity android:name=".fragmentlist.Fragmentlist"/>
+        <activity android:name=".fragmentlist.FragmentDetail"/>
+        <activity android:name=".fragmentlist.FragmentSlideActivity"/>
     </application>
 
 </manifest>
