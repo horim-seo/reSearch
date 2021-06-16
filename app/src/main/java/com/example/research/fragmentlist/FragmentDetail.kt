@@ -1,19 +1,13 @@
 package com.example.research.fragmentlist
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.example.research.MyApplication
 import com.example.research.R
-import com.facebook.drawee.view.SimpleDraweeView
-import kotlinx.android.synthetic.main.activity_toolbar.*
+import com.example.research.dbapp.RegisterActivity
 
 
 /**
@@ -39,6 +33,15 @@ class FragmentDetail : FragmentActivity()  {
 
         setContentView(R.layout.fragment_detail)
 
+        //val dbConnection: ResearchDBApp
+        //ResearchDBApp().c()
+        //ResearchDBApp().s()
+
+        //val dbConnection: DBConnection
+        //dbConnection = DBConnection()
+        //dbConnection.getConnection()
+        //dbConnection.executeMySQLQuery()
+
         datas = intent.getSerializableExtra("data") as ArrayList<String>
 
         // Instantiate a ViewPager2 and a PagerAdapter.
@@ -48,6 +51,20 @@ class FragmentDetail : FragmentActivity()  {
         val pagerAdapter = ScreenSlidePagerAdapter(this)
         viewPager.adapter = pagerAdapter
         viewPager.setPageTransformer(ZoomOutPageTransformer())
+
+
+        // 외부 cubrid DB 연결
+        try{
+            var result: String = ""
+            var id: String = "aa"
+            var pw: String = "bb"
+
+            val task = RegisterActivity()
+            result = task.execute(id, pw).get()
+
+        }catch (ex: Exception){
+            Log.e("ex", ex.message.toString())
+        }
 
         //initFragmentSearch()
     }

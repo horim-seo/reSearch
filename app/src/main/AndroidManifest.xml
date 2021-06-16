@@ -6,6 +6,7 @@
 
     <application
         android:name=".MyApplication"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -22,7 +23,6 @@
 
         <activity android:name=".fragmentlist.Fragmentlist"/>
         <activity android:name=".fragmentlist.FragmentDetail"/>
-        <activity android:name=".fragmentlist.FragmentSlideActivity"/>
     </application>
 
 </manifest>
